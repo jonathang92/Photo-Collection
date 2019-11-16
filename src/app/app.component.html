@@ -1,0 +1,9 @@
+<!-- Toolbar -->
+  <div class="container">
+    <h1 class="display-4 text-center">Drag & Drop Images</h1>
+    <div  class="row" [sortablejs]="aImages"  [sortablejsOptions]="{ animation: 400 }" >
+      <div class="col-xl-2 col-md-2 col-lg-2 col-sm-6 col-6"  *ngFor="let image of aImages; let i = index">
+        <app-image-card [image]="image" (click)="openModal(i)"></app-image-card>
+      </div>
+    </div>
+  </div>
