@@ -29,8 +29,7 @@ export class AppComponent {
   }
   // Reorder all image and save on the a Image Array
   reorderImages(){
-    let aImages: Array<any> = [];
-    Object.entries(this.images).forEach(([k, v]) => {
+    Object.entries(this.images).forEach(([k]) => {
       //Get number of vowels
       let m = this.images[k].title.match(/[aeiou]/gi);
       this.aImages[k] = new Array();
@@ -40,6 +39,8 @@ export class AppComponent {
     });
     this.sortById();
     this.sortByCount();
+    console.log(this.aImages);
+    
   }
   // Sort by id value of array
   sortById(){
